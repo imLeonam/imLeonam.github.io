@@ -7,26 +7,32 @@
     <title>Price in WorkHour</title>
     <!-- <link href="/dist/output.css" rel="stylesheet" /> -->
     <link href="/styles/indexStyle.css" rel="stylesheet" />
+    <link href="/styles/selectStyle.css" rel="stylesheet" />
     <link href="/styles/input.css" rel="stylesheet" />
   </head>
 
   <body>
     <!-- Title -->
     <header>
-      <h2 data-lang="en">
-        PRICE IN TIME CONVERSOR
-      </h2>
-      <h2 data-lang="br">
-        CONVERSOR DE PREÇO EM HORA
-      </h2>
-      <select id="change-language">
-        <option value="en" selected="selected">
-          English (US)
-        </option>
-        <option value="br">
-          Português (BR)
-        </option>
-      </select>
+      <div>
+        <h2 data-lang="en">
+          PRICE IN TIME CONVERSOR
+        </h2>
+        <h2 data-lang="br">
+          CONVERSOR DE PREÇO EM HORA
+        </h2>
+      </div>
+      <div class="select">
+        <select id="change-language">
+          <option value="en">
+            EN
+          </option>
+          <option value="br" selected="selected">
+            PT
+          </option>
+        </select>
+        <span class="focus"></span>
+      </div>
     </header>
 
     <!-- Form/Results -->
