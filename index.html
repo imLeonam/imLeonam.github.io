@@ -9,6 +9,7 @@
     <link href="/styles/indexStyle.css" rel="stylesheet" />
     <link href="/styles/selectStyle.css" rel="stylesheet" />
     <link href="/styles/input.css" rel="stylesheet" />
+    <link href="/styles/navbar.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -33,6 +34,17 @@
         </select>
         <span class="focus"></span>
       </div>
+      <nav class="nav-bar">
+        <div class="links">
+          <a class="active" href="index.html">
+            Home
+          </a>
+          <a href="/historic.html">
+            <span data-lang="br"> Histórico </span>
+            <span data-lang="en"> Historic </span>
+          </a>
+        </div>
+      </nav>
     </header>
 
     <!-- Form/Results -->
@@ -108,7 +120,10 @@
   <script src="libs/i18n-language.js-master/i18n-language.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   <script src="/src/scripts/ProductPriceInTime.js"></script>
+  <script src="/src/scripts/Historic.js"></script>
+
   <script>
     let resultsContainer = document.querySelector('.expanded-panel');
     const salaryResult = document.querySelector('#salaryResult');
@@ -165,6 +180,17 @@
         const realProdPrice = productHourPrice.getProductPrice();
         const totalProdHoursPrice = productHourPrice.productValueInHours();
         const formattedProdHourPrice = productHourPrice.convertDecimalTime(totalProdHoursPrice);
+
+        const historyData = {
+          valueHours: valueHours.toFixed(2),
+          valueDays: valueDays.toFixed(2),
+          salaryValue: salaryValue.toFixed(2),
+          realProdPrice: realProdPrice.toFixed(2),
+          totalProdHoursPrice: totalProdHoursPrice.toFixed(2),
+          formattedProdHourPrice: formattedProdHourPrice,
+        }
+
+        saveInHistory(historyData);
 
         if (selectLanguage.value === 'br') {
           salaryResult.innerText = 'Você ganha ' + productHourPrice.formatCurrency(salaryValue);
