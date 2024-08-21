@@ -59,7 +59,7 @@ function onSubmit() {
 
 function onReset() {
     resultsContainer.classList.remove('active');
-    
+
     salaryResult.innerText = '';
     valueDaysResult.innerText = '';
     valueHoursResult.innerText = '';
@@ -76,7 +76,6 @@ form.addEventListener('submit', (event) => {
 });
 
 form.addEventListener('reset', (event) => {
-    event.preventDefault();
     onReset();
 });
 
